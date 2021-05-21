@@ -9,9 +9,13 @@ Because 4 rows did not have an entry for the price column (the target/ dependent
 Data was split into a training set (150 samples) and a test set (51 samples). The **75%-25% split** is expected to allow for enough samples in the train set so that the machine learning algorithm picks up on the relevant patterns, while also leaving enough samples in the test set, so that accurate model assessment can be performed.
 
 A **column transformer** was built to scale numerical variables using the **MinMax scaler**, and **one-hot encode** categorical values. This column transformer was fed into a pipeline for each of the algorithms used:
+
 •	k-Nearest Neighbors (kNN)
+
 •	Multi-layer Perceptron Classifier
+
 •	Support Vector Machines (SVM)
+
 •	Logistic Regression
 
 For each of the 4 models, **grid search CV** was performed on a parameter grid to **tune hyperparameters** and achieve the best recall performance. Recall was chosen as the optimizer because it was what initial testing revealed to be the most challenging to achieve for the models, and because high recall was desirable for the usefulness of the model.
